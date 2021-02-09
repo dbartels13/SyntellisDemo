@@ -1,0 +1,11 @@
+<div class="message-container" [ngClass]="item.css">
+    <div class="row">
+        <div class="message-title col-10">
+            {{item.title}}
+        </div>
+        <button mat-icon-button class="col-2 right closeButton" (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div class="col-12 message-contents">{{item.message}}</div>
+</div>

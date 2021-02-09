@@ -1,0 +1,51 @@
+/*
+ * Standard colors
+ */
+ $colorPrimary           : #2fffff;
+ $colorSuccess           : #2adbbe;
+ $colorWarning           : #FF8822;
+ $colorDanger            : #e42525;
+ $colorBackground        : white;
+ 
+ /*
+  * Highlights (Buttons/Modals)
+  */
+ $colorPrimaryBright     : #80ffff;
+ $colorSuccessBright     : #3beed0;
+ $colorWarningBright     : #ffa250;
+ $colorDangerBright      : #f13b3b;
+ 
+ $colorPrimaryDark       : #30eeee;
+ $colorSuccessDark       : #24ceb1;
+ $colorWarningDark       : #e26c05;
+ $colorDangerDark        : #cc1f1f;
+ 
+ $colorPrimaryFont       : black;
+ $colorSuccessFont       : black;
+ $colorWarningFont       : black;
+ $colorDangerFont        : black;
+ 
+ $colorPrimaryFontDark   : #222222;
+ $colorSuccessFontDark   : #222222;
+ $colorWarningFontDark   : #222222;
+ $colorDangerFontDark    : #222222;
+ 
+/*
+ * Header/Menu
+ */
+$headerPrimary           : $colorPrimary;
+$headerSecondary         : $colorPrimaryDark;
+$subMenuHover            : #f0f6f7;
+
+/*
+ * Tables
+ */
+$tableOddRows            : #ecf3fa;
+$tableEvenRows           : #ddefff;
+
+/*
+ * Misc
+ */
+$linkColor               : #346aff;
+$spinnerColor            : #5078e7;
+$panelColor              : #cef6ff;

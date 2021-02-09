@@ -1,0 +1,52 @@
+<div *ngIf="loading" class="mt-5 d-flex justify-content-center">
+    <h2 class="mt-2">Loading Users...</h2>
+    <mat-spinner [diameter]="60" class="mx-3"></mat-spinner>
+</div>
+
+<div *ngIf="!loading && !usersService.users" class="d-flex justify-content-center mt-5">
+    <h3>Unable to retrieve user list</h3>
+</div>
+
+<div *ngIf="!loading && usersService.users">
+    <h1>Users:</h1>
+
+    <h4 *ngIf="usersService.users.length == 0" class="m-5">No users</h4>
+    <div *ngFor="let user of usersService.users" class="row my-3">
+        <h5 (click)="ShowUserDetails(user.id)" class="d-none d-sm-block clickableLink col-sm-6 col-md-5 col-lg-4 col-xl-3 mt-1 text-center">{{user.name}}</h5>
+        <div class="d-none d-sm-block col-sm-6 col-md-7 col-lg-8 col-xl-9">
+            <button class="btn btn-primary mx-2" (click)="ShowPosts(user.id)">Posts</button>
+            <button class="btn btn-primary" (click)="ShowTodos(user.id)">Todos</button>
+        </div>
+        <div (click)="ShowUserDetails(user.id)" class="d-sm-none clickableLink w-100 d-block">
+                <span class="float-start mt-1">{{user.name}}</span>
+                <button class="btn btn-primary float-end" (click)="ShowTodos(user.id)">Todos</button>
+                <button class="btn btn-primary mx-2 float-end" (click)="ShowPosts(user.id)">Posts</button>
+        </div>
+        <div *ngIf="user.showDetails">
+            <div class="row">
+                <div class="col-4 col-sm-3 col-md-2">Username:</div>
+                <div class="col-8 col-sm-9 col-md-10">{{user.username}}</div>
+            </div>
+            <div class="row">
+                <div class="col-4 col-sm-3 col-md-2">Email:</div>
+                <div class="col-8 col-sm-9 col-md-10">{{user.email}}</div>
+            </div>
+            <div class="row">
+                <div class="col-4 col-sm-3 col-md-2">Address:</div>
+                <div class="col-8 col-sm-9 col-md-10">{{user.address.street}} {{user.address.suite}}, {{user.address.city}}, {{user.address.zipcode}}</div>
+            </div>
+            <div class="row">
+                <div class="col-4 col-sm-3 col-md-2">Phone:</div>
+                <div class="col-8 col-sm-9 col-md-10">{{user.phone}}</div>
+            </div>
+            <div class="row">
+                <div class="col-4 col-sm-3 col-md-2">Website:</div>
+                <a href="http://{{user.website}}" target="blank" class="col-8 col-sm-9 col-md-10">{{user.website}}</a>
+            </div>
+            <div class="row">
+                <div class="col-4 col-sm-3 col-md-2">Company:</div>
+                <div class="col-8 col-sm-9 col-md-10">{{user.company.name}}</div>
+            </div>
+        </div>
+    </div>
+</div>

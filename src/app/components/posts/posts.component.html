@@ -1,0 +1,27 @@
+<div *ngIf="!user" class="mt-5 d-flex justify-content-center">
+    <h2 class="mt-2">Loading user information...</h2>
+    <mat-spinner [diameter]="60" class="mx-3"></mat-spinner>
+</div>
+
+<div *ngIf="user">
+    <div *ngIf="loading" class="mt-5 d-flex justify-content-center">
+        <h2 class="mt-2">Loading Posts for {{user.name}}...</h2>
+        <mat-spinner [diameter]="60" class="mx-3"></mat-spinner>
+    </div>
+    
+    <div *ngIf="!loading && !user.posts" class="w-100 text-center">
+        <h3>Unable to retrieve posts for {{user.name}}</h3>
+        <div class="clickableLink d-inline-block" (click)="home()">Click here</div> to go back to users listing
+    </div>
+    <div *ngIf="!loading && user.posts">
+        <h1>{{user.name}} Posts:</h1>
+        <div class="clickableLink d-inline-block" (click)="home()">Click here</div>
+        to go back to users listing, or you can
+        <div class="clickableLink d-inline-block" (click)="todo()">view todos</div>
+        <h4 *ngIf="user.posts.length == 0" class="m-5">No posts</h4>
+        <div *ngFor="let post of user.posts" class="mx-2 my-5">
+            <div class="fw-bold">{{post.title}}</div>
+            <div>{{post.body}}</div>
+        </div>
+    </div>
+</div>

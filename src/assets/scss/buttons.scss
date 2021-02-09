@@ -1,0 +1,73 @@
+@import "colors.scss";
+
+.btn {
+	border-radius: 3px;
+	border: 0px;
+	color: $colorPrimaryFont;
+	display: inline-flex;
+}
+
+.buttonSpinner {
+	padding-right: 8px;
+	padding-top: 3px;
+}
+
+/*
+ * Primary
+ */
+.btn-primary {
+	background: $colorPrimary !important;
+	color: $colorPrimaryFont !important;
+}
+.btn-primary:disabled {
+	background-color: $colorPrimaryDark !important;
+	color: $colorPrimaryFontDark !important;
+}
+.btn-primary:not([disabled]):hover, .btn-primary:not([disabled]):focus {
+	background: $colorPrimaryBright !important;
+}
+
+/*
+ * Success
+ */
+.btn-success {
+	background: $colorSuccess !important;
+	color: $colorSuccessFont !important;
+}
+.btn-success:disabled {
+	background-color: $colorSuccessDark !important;
+	color: $colorSuccessFontDark !important;
+}
+.btn-success:not([disabled]):hover, .btn-success:not([disabled]):focus {
+	background: $colorSuccessBright !important;
+}
+
+/*
+ * Warning
+ */
+.btn-warning {
+	background: $colorWarning !important;
+	color: $colorWarningFont !important;
+}
+.btn-warning:disabled {
+	background-color: $colorWarningDark !important;
+	color: $colorWarningFontDark !important;
+}
+.btn-warning:not([disabled]):hover, .btn-warning:not([disabled]):focus {
+	background: $colorWarningBright !important;
+}
+
+/*
+ * Danger
+ */
+.btn-danger {
+	background: $colorDanger !important;
+	color: $colorDangerFont !important;
+}
+.btn-danger:disabled {
+	background-color: $colorDangerDark !important;
+	color: $colorDangerFontDark !important;
+}
+.btn-danger:not([disabled]):hover, .btn-danger:not([disabled]):focus {
+	background: $colorDangerBright !important;
+}

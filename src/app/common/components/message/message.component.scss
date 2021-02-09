@@ -1,0 +1,40 @@
+@import "../../../../assets/scss/colors.scss";
+
+.message-container {
+  width: 250px;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  float: right;
+}
+
+.message-title {
+    padding-top: 10px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: clip;
+    font-size: 1.5rem;
+  }
+  
+.message-contents {
+  float: left;
+  padding: 5px;
+}
+
+.closeButton {
+  background-color: transparent;
+  border: none;
+}
+.message-success {
+  background-color: $colorSuccess;
+}
+.message-warning {
+  background-color: $colorWarning;
+}
+.message-failure {
+  background-color: $colorDanger;
+}
+.message-information {
+  background-color: $colorPrimary;
+}

@@ -1,0 +1,154 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "./assets/scss/buttons.scss";
+@import "./assets/scss/colors.scss";
+
+/*
+ * Standard HTML
+ */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: roboto, sans-serif !important;
+    margin: 0px;
+    padding-top: 0px;
+    padding-bottom: 20px;
+}
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:#317eac
+}
+
+a {
+    text-decoration: underline;
+    color: $linkColor;
+}
+a:active, a:hover, a:focus{
+    color: $linkColor;
+}
+
+input:focus {
+    outline: none;
+}
+
+hr {
+    width: 100%;
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+}
+hr.thick {
+    height: 4px;
+}
+
+table {
+    border-collapse: collapse;
+}
+tr:nth-child(even) {
+    background-color: $tableEvenRows;
+}
+tr:nth-child(odd) {
+    background-color: $tableOddRows;
+}
+tr:first-child {
+    background-color: $colorBackground;
+}
+th {
+    text-align: center;
+}
+
+/*
+ * Bootstrap overrides
+ */
+.clearfix {
+    overflow: auto;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*
+ * Angular Materials Overrides
+*/
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: $spinnerColor;
+    display: inline-block !important;
+}
+
+.mat-dialog-container {
+    padding: 0px !important;
+    border-radius: 10px !important;
+}
+
+.snack-bar-container {
+    opacity: 0.75 !important;
+    background: transparent !important;
+    margin-top: 80px !important; // This should match the height of the header (plus a few pixels for spacing) so that it will appear in the content
+    color: black !important;
+    min-width: 0px !important;
+    padding: 0px !important;
+}
+
+
+/*
+ * Colors
+ */
+.success {
+    color: $colorSuccess;
+}
+
+.error {
+    color: $colorDanger;
+}
+
+.warning {
+    color: $colorWarning;
+}
+
+.primary{
+    color: $colorPrimary;
+}
+
+/*
+ * Messaging Component Colors
+ * For some reason, this had to be global
+ */
+.primary-message {
+    color: $colorPrimary;
+}
+.error-message {
+    color: $colorDanger;
+}
+.success-message {
+    color: $colorSuccess;
+}
+.warning-message {
+    color: $colorWarning;
+}
+
+/*
+ * Misc
+ */
+.single-line-truncate {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+
+.clickable {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.clickableLink {
+    @extend .clickable;
+    color: $linkColor;
+}
